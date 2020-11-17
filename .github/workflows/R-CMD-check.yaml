@@ -52,7 +52,7 @@ jobs:
 
       - name: Install RCurl
         run: |
-          install.packages("RCurl")
+          install.packages("RCurl", type="source")
         shell: Rscript {0}
 
       - name: Install dependencies
