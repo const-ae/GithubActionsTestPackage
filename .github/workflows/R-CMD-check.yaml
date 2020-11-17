@@ -50,6 +50,10 @@ jobs:
           saveRDS(remotes::dev_package_deps(dependencies = TRUE), ".github/depends.Rds", version = 2)
         shell: Rscript {0}
 
+      - name: Install RCurl
+        run: |
+          install.packages("RCurl")
+        shell: Rscript {0}
 
       - name: Install dependencies
         run: |
