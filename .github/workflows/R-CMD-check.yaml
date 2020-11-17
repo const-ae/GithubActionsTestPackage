@@ -34,7 +34,11 @@ jobs:
       - name: Install Mac system libraries
         if: ${{ matrix.config.os == 'macOS-latest' }}
         run: |
-          brew install curl-openssl pkgconfig
+             brew install curl-openssl pkgconfig
+             curl -OL https://github.com/curl/curl/raw/master/docs/examples/crawler.c
+             export PKG_CONFIG_PATH="/usr/local/opt/curl-openssl/lib/pkgconfig"
+             cc -o crawler crawler.c $(pkg-config --cflags --libs libxml-2.0 libcurl)
+
 
 
       - uses: actions/checkout@v2
