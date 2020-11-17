@@ -64,7 +64,7 @@ jobs:
         run: |
           print(3 * 9)
           print("Hello world!!!!!")
-
+        shell: Rscript {0}
 
       - name: Session info
         run: |
