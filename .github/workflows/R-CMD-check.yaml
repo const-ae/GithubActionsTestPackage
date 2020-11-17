@@ -34,7 +34,8 @@ jobs:
       - name: Install Mac system libraries
         if: ${{ matrix.config.os == 'macOS-latest' }}
         run: |
-          brew install openssl curl
+          brew install curl-openssl
+
 
       - uses: actions/checkout@v2
 
